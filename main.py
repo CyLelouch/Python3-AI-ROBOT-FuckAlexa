@@ -18,7 +18,7 @@ import pyttsx3
 import speech_recognition as sr
 import pytz
 import subprocess
-
+import webbrowser
         #Creating file and playing text from file via mp3 extension
 
 print("starting")
@@ -65,6 +65,8 @@ while True:
 
 #Hard Coded Commands Applied here
 
+    
+
         #Greetings
         if "hello" in text:
             speak("hi there")
@@ -77,12 +79,24 @@ while True:
 
         if "sup" in text:
             speak("sup with you dog")
+        
+        if "sap" in text:
+            speak(" nothing much. you.")
 
+# Stop program from continuation 
 
+        if "nevermind" in text:
+            print("stoping continuation ")
 
         #importingFilesTest
         if "file import" in text:
             speak("testing right now. one second.")
             import PythonImportingTest
-            if PythonImportingTest == True:
-                speak("testing completed. all good.")
+            speak("testing completed. all good. Check print statement for confirmation ")
+                
+        #web browser searches 
+
+        if "playlist" in text:
+            webbrowser.open("https://www.youtube.com/watch?v=Jms3FCuuIos&list=PLfFBZBQAEaXmfDmDwIbT9Ug6EMNEmujhP&index=1")
+        if "stop" in text:
+            os.system("taskkill /im chrome.exe /f")
